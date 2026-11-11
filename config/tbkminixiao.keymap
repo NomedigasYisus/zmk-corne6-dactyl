@@ -23,11 +23,18 @@
             bindings = <&kp>, <&kp>;
         };
 
-        swt: switch {
+        win: os_win {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
-            display-name = "SWITCH";
+            display-name = "WIN";
             toggle-mode = "on";
+        };
+
+        mac: os_mac {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "MAC";
+            toggle-mode = "off";
         };
 
         tap_f1: tap_f1 {
@@ -183,7 +190,7 @@
 
         adjust {
             bindings = <
-  &none  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR_ALL  &bt BT_CLR    &studio_unlock  &none         &swt 1      &none      &none      &none  &none
+  &none  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR_ALL  &bt BT_CLR    &studio_unlock  &none         &win 1      &mac 1     &none      &none  &none
   &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &kp C_VOL_UP  &mkp LCLK   &mkp MCLK  &mkp RCLK  &none  &none
   &none  &none         &none         &caps_word      &none         &none           &kp C_VOL_DN  &kp K_MUTE  &none      &none      &none  &none
   &none  &none         &none         &none           &none         &none           &none         &none       &none      &none      &none  &none
